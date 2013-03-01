@@ -68,10 +68,15 @@ table {
 
 // #Basic Styles
 // ==================================================
+html {
+    font-size: 100%; }
+
 body {
     background: @bodyBackground;
     color: @bodyColor;
-    font: @bodyFontSize~"/"@bodyFontWeight @bodyFontFamily; }
+    .font-size(); // 16px base, using rem units and px as fallback for unsupported browsers
+    line-height: 1.625; // unitless universal line-height for document - http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/
+    font-family: @bodyFontFamily; }
 
 // #Typography
 // ==================================================
@@ -84,32 +89,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: @h1FontSize;
-    line-height: @h1LineHeight;
-    margin-bottom: @h1MarginBottom; }
+    .font-size(@h1FontSize);  }
 
 h2 {
-    font-size: @h2FontSize;
-    line-height: @h2LineHeight;
-    margin-bottom: @h2MarginBottom; }
+    .font-size(@h2FontSize);  }
 
 h3 {
-    font-size: @h3FontSize;
-    line-height: @h3LineHeight;
-    margin-bottom: @h3MarginBottom; }
+    .font-size(@h3FontSize);  }
 
 h4 {
-    font-size: @h4FontSize;
-    line-height: @h4LineHeight;
-    margin-bottom: @h4MarginBottom; }
+    .font-size(@h4FontSize);  }
 
 h5 {
-    font-size: @h5FontSize;
-    line-height: @h5LineHeight; }
+    .font-size(@h5FontSize); }
 
 h6 {
-    font-size: @h6FontSize;
-    line-height: @h6LineHeight; }
+    .font-size(@h6FontSize); }
 
 .subheader { color: #777; }
 
@@ -245,7 +240,7 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-    #gradient > .horizontal(#eee, rgba(255,255,255,.2), rgba(0,0,0,.2));
+    background-color: #eee;
     border: 1px solid #aaa;
     border-top: 1px solid #ccc;
     border-left: 1px solid #ccc;
@@ -263,13 +258,13 @@ input[type="button"] {
     font-family: @bodyFontFamily;
     &:hover {
         color: #222;
-        #gradient > .horizontal(#ddd, rgba(255,255,255,.3), rgba(0,0,0,.3));
+        background-color: #ddd;
         border: 1px solid #888;
         border-top: 1px solid #aaa;
         border-left: 1px solid #aaa; }
     &:active {
         border: 1px solid #666;
-        #gradient > .horizontal(#ccc, rgba(255,255,255,.35), rgba(0,0,0,.4)); }
+        background-color: #ccc}
     &.full-width {
         width: 100%;
         padding-left: 0 !important;
