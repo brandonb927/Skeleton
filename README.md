@@ -1,4 +1,0 @@
-skeleton-em
-===========
-
-Skeleton-Em
