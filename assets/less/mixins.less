@@ -20,6 +20,13 @@
             background-size: @width @height; }
 }
 
+.rem(@property, @value) {
+    // This is a workaround, inspired by https://github.com/borodean/less-properties
+    @rem: (@value / 16);
+    -: ~`(function () { return ';@{property}: @{value}px'; }())` ;
+    -: ~`(function () { return ';@{property}: @{rem}rem'; }())`;
+}
+
 .font-size(@font-size: 16) {
     @rem: (@font-size / 16);
     font-size: @font-size * 1px;
