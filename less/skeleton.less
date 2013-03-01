@@ -1,0 +1,283 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 8/17/2011
+*/
+
+
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Clearing */
+
+@columnDesktop   : 40px; // used for everything above 959px width
+@gutterDesktop   : 20px; // used for everything above 959px width
+@column          : 28px;
+@gutter          : 20px;
+@numColumns      : 16;
+@mobileLandscape : 420px;
+@mobilePortrait  : 300px;
+
+/* #Base 960 Grid
+================================================== */
+
+.column,
+.columns {
+    float: left;
+    display: inline;
+    margin-left: (@gutterDesktop / 2)!important;
+    margin-right: (@gutterDesktop / 2)!important;
+    /* Nested Column Classes */
+    &.alpha,
+    &.alpha {
+        margin-left: 0!important;
+        &.omega {
+            margin: 0!important; }
+    }
+    &.omega,
+    &.omega {
+        margin-right: 0!important; }
+}
+
+.row {
+    margin-bottom: @gutterDesktop; }
+
+.container {
+    position: relative;
+    width: (@columnDesktop + @gutterDesktop) * @numColumns;
+    margin: 0 auto;
+    padding: 0;
+    /* Base Grid */
+    .column {
+        &.one        { width: @columnDesktop; }
+        &.one-third  { width: ((@columnDesktop + @gutterDesktop) * (@numColumns - 1)) / 3; }
+        &.two-thirds { width: ((((@columnDesktop + @gutterDesktop) * (@numColumns - 1)) / 3) * 2) + @gutterDesktop; }
+    }
+    .columns {
+        &.two      { width: @columnDesktop * 2 + @gutterDesktop * 1; }
+        &.three    { width: @columnDesktop * 3 + @gutterDesktop * 2; }
+        &.four     { width: @columnDesktop * 4 + @gutterDesktop * 3; }
+        &.five     { width: @columnDesktop * 5 + @gutterDesktop * 4; }
+        &.six      { width: @columnDesktop * 6 + @gutterDesktop * 5; }
+        &.seven    { width: @columnDesktop * 7 + @gutterDesktop * 6; }
+        &.eight    { width: @columnDesktop * 8 + @gutterDesktop * 7; }
+        &.nine     { width: @columnDesktop * 9 + @gutterDesktop * 8; }
+        &.ten      { width: @columnDesktop * 10 + @gutterDesktop * 9; }
+        &.eleven   { width: @columnDesktop * 11 + @gutterDesktop * 10; }
+        &.twelve   { width: @columnDesktop * 12 + @gutterDesktop * 11; }
+        &.thirteen { width: @columnDesktop * 13 + @gutterDesktop * 12; }
+        &.fourteen { width: @columnDesktop * 14 + @gutterDesktop * 13; }
+        &.fifteen  { width: @columnDesktop * 15 + @gutterDesktop * 14; }
+        &.sixteen  { width: @columnDesktop * 16 + @gutterDesktop * 15; }
+    }
+    /* Offsets */
+    .offset-by-one      { padding-left: (@columnDesktop + @gutterDesktop) * 1; }
+    .offset-by-two      { padding-left: (@columnDesktop + @gutterDesktop) * 2; }
+    .offset-by-three    { padding-left: (@columnDesktop + @gutterDesktop) * 3; }
+    .offset-by-four     { padding-left: (@columnDesktop + @gutterDesktop) * 4; }
+    .offset-by-five     { padding-left: (@columnDesktop + @gutterDesktop) * 5; }
+    .offset-by-six      { padding-left: (@columnDesktop + @gutterDesktop) * 6; }
+    .offset-by-seven    { padding-left: (@columnDesktop + @gutterDesktop) * 7; }
+    .offset-by-eight    { padding-left: (@columnDesktop + @gutterDesktop) * 8; }
+    .offset-by-nine     { padding-left: (@columnDesktop + @gutterDesktop) * 9; }
+    .offset-by-ten      { padding-left: (@columnDesktop + @gutterDesktop) * 10; }
+    .offset-by-eleven   { padding-left: (@columnDesktop + @gutterDesktop) * 11; }
+    .offset-by-twelve   { padding-left: (@columnDesktop + @gutterDesktop) * 12; }
+    .offset-by-thirteen { padding-left: (@columnDesktop + @gutterDesktop) * 13; }
+    .offset-by-fourteen { padding-left: (@columnDesktop + @gutterDesktop) * 14; }
+    .offset-by-fifteen  { padding-left: (@columnDesktop + @gutterDesktop) * 15; }
+}
+
+
+/* #Tablet (Portrait)
+================================================== */
+/* Note: Design for a width of 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .container {
+        width: (@column + @gutter) * @numColumns;
+        .column,
+        .columns {
+            margin-left: (@gutter / 2)!important;
+            margin-right: (@gutter / 2)!important;
+            &.alpha {
+                margin-left: 0!important;
+                margin-right: (@gutter / 2)!important; }
+            &.omega {
+                margin-right: 0!important;
+                margin-left: (@gutter / 2)!important; }
+        }
+    }
+
+    /* Base Grid */
+    .container {
+        .column {
+            &.one-third{ width: (((@column + @gutter) * (@numColumns - 1)) / 3) - 4; }
+            &.two-thirds{ width: (((((@column + @gutter) * (@numColumns - 1)) / 3) * 2) + @gutter) - 8; }
+            &.one { width: @column; }
+        }
+        .columns {
+            &.two      { width: @column * 2 + @gutter * 1; }
+            &.three    { width: @column * 3 + @gutter * 2; }
+            &.four     { width: @column * 4 + @gutter * 3; }
+            &.five     { width: @column * 5 + @gutter * 4; }
+            &.six      { width: @column * 6 + @gutter * 5; }
+            &.seven    { width: @column * 7 + @gutter * 6; }
+            &.eight    { width: @column * 8 + @gutter * 7; }
+            &.nine     { width: @column * 9 + @gutter * 8; }
+            &.ten      { width: @column * 10 + @gutter * 9; }
+            &.eleven   { width: @column * 11 + @gutter * 10; }
+            &.twelve   { width: @column * 12 + @gutter * 11; }
+            &.thirteen { width: @column * 13 + @gutter * 12; }
+            &.fourteen { width: @column * 14 + @gutter * 13; }
+            &.fifteen  { width: @column * 15 + @gutter * 14; }
+            &.sixteen  { width: @column * 16 + @gutter * 15; }
+        }
+
+        /* Offsets */
+        .offset-by-one      { padding-left: (@column + @gutter) * 1; }
+        .offset-by-two      { padding-left: (@column + @gutter) * 2; }
+        .offset-by-three    { padding-left: (@column + @gutter) * 3; }
+        .offset-by-four     { padding-left: (@column + @gutter) * 4; }
+        .offset-by-five     { padding-left: (@column + @gutter) * 5; }
+        .offset-by-six      { padding-left: (@column + @gutter) * 6; }
+        .offset-by-seven    { padding-left: (@column + @gutter) * 7; }
+        .offset-by-eight    { padding-left: (@column + @gutter) * 8; }
+        .offset-by-nine     { padding-left: (@column + @gutter) * 9; }
+        .offset-by-ten      { padding-left: (@column + @gutter) * 10; }
+        .offset-by-eleven   { padding-left: (@column + @gutter) * 11; }
+        .offset-by-twelve   { padding-left: (@column + @gutter) * 12; }
+        .offset-by-thirteen { padding-left: (@column + @gutter) * 13; }
+        .offset-by-fourteen { padding-left: (@column + @gutter) * 14; }
+        .offset-by-fifteen  { padding-left: (@column + @gutter) * 15; }
+    }
+}
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+@media only screen and (max-width: 767px) {
+    .columns,
+    .column {
+        margin: 0!important; }
+
+    .container {
+        width: @mobilePortrait;
+        .column {
+            &.one,
+            &.one-third,
+            &.two-thirds { width: @mobilePortrait;}
+        }
+        .columns {
+            &.two,
+            &.three,
+            &.four,
+            &.five,
+            &.six,
+            &.seven,
+            &.eight,
+            &.nine,
+            &.ten,
+            &.eleven,
+            &.twelve,
+            &.thirteen,
+            &.fourteen,
+            &.fifteen,
+            &.sixteen { width: @mobilePortrait; }
+        }
+        /* Offsets */
+        .offset-by-one,
+        .offset-by-two,
+        .offset-by-three,
+        .offset-by-four,
+        .offset-by-five,
+        .offset-by-six,
+        .offset-by-seven,
+        .offset-by-eight,
+        .offset-by-nine,
+        .offset-by-ten,
+        .offset-by-eleven,
+        .offset-by-twelve,
+        .offset-by-thirteen,
+        .offset-by-fourteen,
+        .offset-by-fifteen { padding-left: 0; }
+    }
+}
+
+
+/* #Mobile (Landscape)
+================================================== */
+/* Note: Design for a width of 480px */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container{
+        width: @mobileLandscape;
+        .column {
+            &.one-third,
+            &.two-thirds,
+            &.one { width: @mobileLandscape;}
+        }
+        .columns{
+            &.two,
+            &.three,
+            &.four,
+            &.five,
+            &.six,
+            &.seven,
+            &.eight,
+            &.nine,
+            &.ten,
+            &.eleven,
+            &.twelve,
+            &.thirteen,
+            &.fourteen,
+            &.fifteen,
+            &.sixteen { width: @mobileLandscape; }
+        }
+    }
+}
+
+
+/* #Clearing
+================================================== */
+
+/* Self Clearing Goodness */
+.container {
+    &:after {
+        content: " ";
+        display: table;
+        clear: both; }
+}
+
+/* Use clearfix class on parent to clear nested columns,
+or wrap each row of columns in a <div class="row"> */
+.clearfix,
+.row {
+    zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table; }
+    &:after {
+        clear: both; }
+}
+
+/* You can also use a <br class="clear" /> to clear columns */
+br.clear {
+    clear: both;
+    display: table; }
+
+/* #Debug
+================================================== */
+#debug {
+    background: rgba(255, 0, 0, 0.5);
+    z-index: 10000;
+    color: rgba(255, 255, 255, 1);
+    height: 20px;
+    position: fixed !important;
+    top: 0;
+    width: 100%; }
