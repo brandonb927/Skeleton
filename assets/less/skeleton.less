@@ -1,17 +1,8 @@
-/*
-* Skeleton-em V0.2
-* Copyright 2011, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 8/17/2011
-*/
+// Table of Contents
+// ==================================================
 
-
-/* Table of Contents
-==================================================
-    #Base 60rem Grid
-    #Clearing */
+// #Base 60rem Grid
+// #Clearing
 
 @columnDesktop   : 2.5rem; // used for everything above 59.94rem width
 @gutterDesktop   : 1.25rem; // used for everything above 59.94rem width
@@ -24,8 +15,8 @@
 @mobilePortrait  : 18.75rem;
 @mobileLandscape : 26.25rem;
 
-/* #Base 960 Grid
-================================================== */
+// Base 960 Grid
+// ==================================================
 
 .column,
 .columns {
@@ -33,7 +24,7 @@
     display: inline;
     margin-left: (@gutterDesktop / 2)!important;
     margin-right: (@gutterDesktop / 2)!important;
-    /* Nested Column Classes */
+    // Nested Column Classes
     &.alpha,
     &.alpha {
         margin-left: 0!important;
@@ -53,7 +44,7 @@
     width: (@columnDesktop + @gutterDesktop) * @numColumns;
     margin: 0 auto;
     padding: 0;
-    /* Base Grid */
+    // Base Grid
     .column {
         &.one        { width: @columnDesktop; }
         &.one-third  { width: ((@columnDesktop + @gutterDesktop) * (@numColumns - 1)) / 3; }
@@ -76,7 +67,7 @@
         &.fifteen  { width: @columnDesktop * 15 + @gutterDesktop * 14; }
         &.sixteen  { width: @columnDesktop * 16 + @gutterDesktop * 15; }
     }
-    /* Offsets */
+    // Offsets
     .offset-by-one      { padding-left: (@columnDesktop + @gutterDesktop) * 1; }
     .offset-by-two      { padding-left: (@columnDesktop + @gutterDesktop) * 2; }
     .offset-by-three    { padding-left: (@columnDesktop + @gutterDesktop) * 3; }
@@ -95,9 +86,9 @@
 }
 
 
-/* #Tablet (Portrait)
-================================================== */
-/* Note: Design for a width of 48rem */
+// Tablet (Portrait)
+// ==================================================
+// Note: Design for a width of 48rem
 
 @media only screen and (min-width: 48rem) and (max-width: 59.94rem) {
     .container {
@@ -115,7 +106,7 @@
         }
     }
 
-    /* Base Grid */
+    // Base Grid
     .container {
         .column {
             &.one-third{ width: (((@column + @gutter) * (@numColumns - 1)) / 3) - 4; }
@@ -140,7 +131,7 @@
             &.sixteen  { width: @column * 16 + @gutter * 15; }
         }
 
-        /* Offsets */
+        // Offsets
         .offset-by-one      { padding-left: (@column + @gutter) * 1; }
         .offset-by-two      { padding-left: (@column + @gutter) * 2; }
         .offset-by-three    { padding-left: (@column + @gutter) * 3; }
@@ -160,8 +151,8 @@
 }
 
 
-/*  #Mobile (Portrait)
-================================================== */
+// Mobile (Portrait)
+// ==================================================
 
 @media only screen and (max-width: 47.94rem) {
     .columns,
@@ -192,7 +183,7 @@
             &.fifteen,
             &.sixteen { width: @mobilePortrait; }
         }
-        /* Offsets */
+        // Offsets
         .offset-by-one,
         .offset-by-two,
         .offset-by-three,
@@ -212,9 +203,9 @@
 }
 
 
-/* #Mobile (Landscape)
-================================================== */
-/* Note: Design for a width of 30rem */
+// Mobile (Landscape)
+// ==================================================
+// Note: Design for a width of 30rem
 
 @media only screen and (min-width: 30rem) and (max-width: 47.94rem) {
     .container{
@@ -245,10 +236,10 @@
 }
 
 
-/* #Clearing
-================================================== */
+// Clearing
+// ==================================================
 
-/* Self Clearing Goodness */
+// Self Clearing Goodness
 .container {
     &:after {
         content: " ";
@@ -256,8 +247,8 @@
         clear: both; }
 }
 
-/* Use clearfix class on parent to clear nested columns,
-or wrap each row of columns in a <div class="row"> */
+// Use clearfix class on parent to clear nested column
+// or wrap each row of columns in a <div class="row">
 .clearfix,
 .row {
     zoom: 1;
@@ -269,13 +260,13 @@ or wrap each row of columns in a <div class="row"> */
         clear: both; }
 }
 
-/* You can also use a <br class="clear" /> to clear columns */
+// You can also use a <br class="clear" /> to clear columns
 br.clear {
     clear: both;
     display: table; }
 
-/* #Debug
-================================================== */
+// Debug
+// ==================================================
 #debug {
     background: rgba(255, 0, 0, 0.5);
     z-index: 10000;
