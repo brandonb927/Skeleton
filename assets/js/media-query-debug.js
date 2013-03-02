@@ -1,24 +1,22 @@
-/**
- * Simple debugging tool for media queries
- *
- */
-$(function() {
-    var $debug = $('#debug'),
-        $window = $(window)
+/*
 
-    //  Window load and resize.
-    $window.on('load resize', function() {
-        if(debug) {
-            if(window.matchMedia("(min-width: 768px) and (max-width: 959px)").matches) {
-                $debug.html("Tablet (Portrait)")
-            } else if(window.matchMedia("(min-width: 480px) and (max-width: 767px)").matches) {
-                $debug.html("Mobile (Landscape)")
-            } else if(window.matchMedia("(max-width: 767px)").matches) {
-                $debug.html("Mobile (Portrait)")
-            } else{
-                $debug.html("Desktop & Tablet (Landscape)")
-            }
-            $debug.append(" – ("+ $window.width() + ' x '+ $window.height() +')px')
-        }
-    })
-})
+ Javascript for debug media queries - by cleatsandcode
+
+ This requires Jquery loaded before this script. Toggle the visiblity of the info using the "t" key.
+
+ Inspired by Johan Brook's css
+
+ Enjoy!
+
+ */
+
+$('body').prepend("<div id='viewportInfo' style='position:fixed;width:100%;padding:4px 1em;background:#00ff00;z-index:1;'><div id='sizeInfo'></div></div>");
+$('#sizeInfo').text('Viewport (Width: ' + $(window).width() + ' , Height: ' + $(window).height() + ' )');
+    $(window).resize(function () {
+        $('#sizeInfo').text('Viewport (Width: ' + $(window).width() + ' , Height: ' + $(window).height() + ' )');
+    });
+$(document).keydown(function (e) {
+    if(e.keyCode == 84 ) {
+        $("#viewportInfo").toggle();
+    }
+});
