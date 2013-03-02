@@ -178,17 +178,22 @@
   .all(@duration:0.2s, @ease:ease-out) {
     -webkit-transition: all @duration @ease;
     -moz-transition: all @duration @ease;
+    -ms-transition: all @duration @ease;
+    -o-transition: all @duration @ease;
     transition: all @duration @ease;
   }
   .property(@property: width,@delay: 200ms, @ease:ease-out){
-    transition: @property @delay @ease;
-    -moz-transition: @property @delay @ease;
     -webkit-transition: @property @delay @ease;
+    -moz-transition: @property @delay @ease;
+    -ms-transition: @property @delay @ease;
     -o-transition: @property @delay @ease;
+    transition: @property @delay @ease;
   }
   .duration(@duration: 0.2s) {
-    -moz-transition-duration: @duration;
     -webkit-transition-duration: @duration;
+    -moz-transition-duration: @duration;
+    -ms-transition-duration: @duration;
+    -o-transition-duration: @duration;
     transition-duration: @duration;
   }
 }
