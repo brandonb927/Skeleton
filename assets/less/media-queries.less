@@ -2,33 +2,17 @@
 // ==================================================
 // Large monitors
 @media only screen and (min-width: 75rem) {
-    @h1FontSize : (@h1BaseFontSize + 8); // px
-    @h2FontSize : (@h2BaseFontSize + 8); // px
-    @h3FontSize : (@h3BaseFontSize + 6); // px
-    @h4FontSize : (@h4BaseFontSize + 4); // px
-    @h5FontSize : (@h5BaseFontSize + 4); // px
-    @h6FontSize : (@h6BaseFontSize + 2); // px
+    body { .font-size(17); }
+    h1 { .font-size(@h1BaseFontSize + 6); }
+    h2 { .font-size(@h2BaseFontSize + 6); }
+    h3 { .font-size(@h3BaseFontSize + 4); }
+    h4 { .font-size(@h4BaseFontSize + 2); }
+    h5 { .font-size(@h5BaseFontSize + 2); }
+    h6 { .font-size(@h6BaseFontSize + 1); }
 
-    body {
-        .font-size(17); }
+    // Add your custom styles below here
+    // ------------------------------------
 
-    h1 {
-        .font-size(@h1FontSize);  }
-
-    h2 {
-        .font-size(@h2FontSize);  }
-
-    h3 {
-        .font-size(@h3FontSize);  }
-
-    h4 {
-        .font-size(@h4FontSize);  }
-
-    h5 {
-        .font-size(@h5FontSize); }
-
-    h6 {
-        .font-size(@h6FontSize); }
 }
 
 // Smaller than standard 960 (devices and browsers)
@@ -39,85 +23,59 @@
 // Tablet Portrait size to standard 960 (devices and browsers)
 @media only screen and (min-width: 48rem) and (max-width: 59.94rem) {
     // Hide everything else
-    .hidden-desktop    { display: inherit !important; }
-    .visible-desktop   { display: none !important ; }
+    .hidden-desktop  { display: inherit !important; }
+    .visible-desktop { display: none !important ; }
     // Show
-    .visible-tablet    { display: inherit !important; }
+    .visible-tablet  { display: inherit !important; }
     // Hide
-    .hidden-tablet     { display: none !important; }
+    .hidden-tablet   { display: none !important; }
+
+    // Add your custom styles below here
+    // ------------------------------------
 
 }
 
 // All Mobile Sizes (devices and browser)
 @media only screen and (max-width: 47.94rem) {
-    @h1FontSize : (@h1BaseFontSize - 6); // px
-    @h2FontSize : (@h2BaseFontSize - 6); // px
-    @h3FontSize : (@h3BaseFontSize - 6); // px
-    @h4FontSize : (@h4BaseFontSize - 4); // px
-    @h5FontSize : (@h5BaseFontSize - 2); // px
-    @h6FontSize : (@h6BaseFontSize - 1); // px
+    body { .font-size(15); }
+    h1 { .font-size(@h1BaseFontSize - 6); }
+    h2 { .font-size(@h2BaseFontSize - 6); }
+    h3 { .font-size(@h3BaseFontSize - 6); }
+    h4 { .font-size(@h4BaseFontSize - 4); }
+    h5 { .font-size(@h5BaseFontSize - 2); }
+    h6 { .font-size(@h6BaseFontSize - 1); }
 
-    body {
-        .font-size(15); }
+    // Add your custom styles below here
+    // ------------------------------------
 
-    h1 {
-        .font-size(@h1FontSize);  }
-
-    h2 {
-        .font-size(@h2FontSize);  }
-
-    h3 {
-        .font-size(@h3FontSize);  }
-
-    h4 {
-        .font-size(@h4FontSize);  }
-
-    h5 {
-        .font-size(@h5FontSize); }
-
-    h6 {
-        .font-size(@h6FontSize); }
 }
 
 // Mobile Landscape Size to Tablet Portrait (devices and browsers)
 @media only screen and (min-width: 30rem) and (max-width: 47.94rem) {
     // Hide everything else
-    .hidden-desktop    { display: inherit !important; }
-    .visible-desktop   { display: none !important; }
+    .hidden-desktop  { display: inherit !important; }
+    .visible-desktop { display: none !important; }
     // Show
-    .visible-phone     { display: inherit !important; } // Use inherit to restore previous behavior
+    .visible-phone   { display: inherit !important; } // Use inherit to restore previous behavior
     // Hide
-    .hidden-phone      { display: none !important; }
+    .hidden-phone    { display: none !important; }
+
+    // Add your custom styles below here
+    // ------------------------------------
 
 }
 
 // Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
 @media only screen and (max-width: 29.94rem) {
-    @h1FontSize : (@h1BaseFontSize - 8); // px
-    @h2FontSize : (@h2BaseFontSize - 8); // px
-    @h3FontSize : (@h3BaseFontSize - 8); // px
-    @h4FontSize : (@h4BaseFontSize - 6); // px
-    @h5FontSize : (@h5BaseFontSize - 4); // px
-    @h6FontSize : (@h6BaseFontSize - 2); // px
+    body { .font-size(14); }
+    h1 { .font-size(@h1BaseFontSize - 8); }
+    h2 { .font-size(@h2BaseFontSize - 8); }
+    h3 { .font-size(@h3BaseFontSize - 8); }
+    h4 { .font-size(@h4BaseFontSize - 6); }
+    h5 { .font-size(@h5BaseFontSize - 4); }
+    h6 { .font-size(@h6BaseFontSize - 2); }
 
-    body {
-        .font-size(14); }
+    // Add your custom styles below here
+    // ------------------------------------
 
-    h1 {
-        .font-size(@h1FontSize);  }
-
-    h2 {
-        .font-size(@h2FontSize);  }
-
-    h3 {
-        .font-size(@h3FontSize);  }
-
-    h4 {
-        .font-size(@h4FontSize);  }
-
-    h5 {
-        .font-size(@h5FontSize); }
-
-    h6 {
-        .font-size(@h6FontSize); }
 }
