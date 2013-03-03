@@ -1,15 +1,15 @@
-/*! ---------------------------------------------------
-    LESS Elements 0.8
+// ---------------------------------------------------
+// LESS Elements 0.8
 
-    Created by:
-    - Dmitry Fadeyev -> http://lesselements.com/
+// Created by:
+// - Dmitry Fadeyev -> http://lesselements.com/
 
-  ---------------------------------------------------
-    A set of useful LESS mixins.
-    See CREDITS file for full author list.
+// ---------------------------------------------------
+// A set of useful LESS mixins.
+// See CREDITS file for full author list.
 
-    More info at: http://lesselements.com
------------------------------------------------------*/
+// More info at: http://lesselements.com
+// ---------------------------------------------------
 
 #gradient {
   .vertical(@color: #F5F5F5, @start: #EEE, @stop: #FFF, @posStart: 0, @posEnd: 1) {
@@ -159,17 +159,17 @@
   }
   .opacity(@opacity: 0.5) {
     @percent: @opacity * 100;
-    /* IE 8 */
+    // IE 8
     -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{percent})";
-    /* IE 5-7 */
+    // IE 5-7
     filter: ~"alpha(opacity=@{percent})";
-    /* Netscape */
+    // Netscape
     -moz-opacity: @opacity;
-    /* Safari 1.x */
+    // Safari 1.x
     -khtml-opacity: @opacity;
-    /* Webkit */
+    // Webkit
     -webkit-opacity: @opacity;
-    /* Good browsers */
+    // Good browsers
     opacity: @opacity;
   }
 }
