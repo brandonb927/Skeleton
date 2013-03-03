@@ -38,7 +38,7 @@
         </nav>
     </div>
     <div class="container">
-        <div class="sixteen columns content">
+        <div class="sixteen columns">
             <header>
                 <h1>Skeleton-em</h1>
             </header>
@@ -132,8 +132,8 @@
                     <div class="one column omega">One</div>
                 </div>
                 <div class="hidden-code">
-                    <a href="">Code Example</a>
-                    <script src="https://gist.github.com/959632.js?file=Skeleton%20Grid"></script>
+                    <a href="#">Code Example</a>
+                    <gist data-username="dhgamache" data-id="959632" data-file="Skeleton Grid"></gist>
                 </div>
             </div>
             <hr />
@@ -163,8 +163,8 @@
                     </div>
                 </div>
                 <div class="hidden-code">
-                    <a href="">Code Example</a>
-                    <script src="https://gist.github.com/973460.js?file=typography"></script>
+                    <a href="#">Code Example</a>
+                    <gist data-username="dhgamache" data-id="973460" data-file="typography"></gist>
                 </div>
             </div>
             <hr />
@@ -173,8 +173,8 @@
                 <p>Skeleton-Em takes on a flat design appearance, and this is evident in the outstanding buttons.</p>
                 <a href="#" class="button">Click Me For Action</a>
                 <div class="hidden-code">
-                    <a href="">Code Example</a>
-                    <script src="https://gist.github.com/973448.js?file=buttons"></script>
+                    <a href="#">Code Example</a>
+                    <gist data-username="dhgamache" data-id="973448" data-file="buttons"></gist>
                 </div>
             </div>
             <hr />
@@ -221,8 +221,8 @@
                 </div>
                 <br class="clear" />
                 <div class="hidden-code">
-                    <a href="">Code Example</a>
-                    <script src="https://gist.github.com/973455.js?file=forms"></script>
+                    <a href="#">Code Example</a>
+                    <gist data-username="dhgamache" data-id="973455" data-file="forms"></gist>
                 </div>
             </div>
             <hr />
@@ -241,8 +241,8 @@
                     <li><strong>Just Mobile Portrait</strong>: Less than 479px</li>
                 </ul>
                 <div class="hidden-code">
-                    <a href="">Code Example</a>
-                    <script src="https://gist.github.com/973467.js?file=media%20queries"></script>
+                    <a href="#">Code Example</a>
+                    <gist data-username="dhgamache" data-id="973467" data-file="media queries"></gist>
                 </div>
             </div>
             <hr />
@@ -263,7 +263,8 @@
                     of trying to implement a JS solution. If you are interested in one though, try the <a href="https://github.com/scottjehl/Respond">respond.js polyfill</a>.</p>
                 <p><strong>Notes on IE</strong>: We all know sometimes IE doesn't behave, so through the genius of conditional CSS I've added a class of "ie" to all
                     versions of the browser, as well as specific targets for each (i.e. "ie6", "ie7", "ie8"). It's not a perfect world, but hopefully this will help
-                    make naughty IE behave. I plan for Skeleton to lose support for IE8 and below sometime in 2013, following the release of <a href="http://blog.jquery.com/2012/06/28/jquery-core-version-1-9-and-beyond/">jQuery 2.0</a>.</p>
+                    make naughty IE behave. I plan for Skeleton-em to lose support for IE8 and below sometime in 2013, following the final release of
+                    <a href="http://blog.jquery.com/2012/06/28/jquery-core-version-1-9-and-beyond/">jQuery 2.0</a>.</p>
             </div>
             <hr />
             <div class="doc-section" id="download">
@@ -344,9 +345,44 @@
     <div class="resize"></div>
 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery-1.9.1.min.js"><\/script>')</script>
     <script src="assets/js/media-query-debug.js"></script>
 
     <script>
+        // Async load gists
+        (function(){
+            var gists = document.getElementsByTagName('gist');
+            function embed(username, id, file, i, tag) {
+                window['embed_gist_'+i] = function(gist) {
+                    var tmp = document.createElement('div');
+                    tmp.innerHTML = gist.div;
+                    tag.parentNode.replaceChild(tmp.firstChild, tag);
+                };
+                var url = 'https://gist.github.com/'+username+'/'+id+'.json?callback=embed_gist_'+i;
+                if(file) {
+                    url += '&file='+file;
+                }
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = url;
+                document.head.appendChild(script);
+            }
+            if(gists.length) {
+                var css = document.createElement('link');
+                css.rel = 'stylesheet';
+                css.href= 'https://gist.github.com/assets/embed-0af287a4b5c981db301049e56f06e5d3.css';
+                document.head.appendChild(css);
+            }
+            for(var i=0; i<gists.length; i++) {
+                var username = gists[i].getAttribute('data-username');
+                var id = gists[i].getAttribute('data-id');
+                var file = gists[i].getAttribute('data-file');
+                if(id) {
+                    embed(username, id, file, i, gists[i]);
+                }
+            }
+        })();
+
         $(document).on('click', '.hidden-code, a, button, input[type=submit]', function(e) {
             e.preventDefault();
             $(this).children('.gist').slideToggle();
