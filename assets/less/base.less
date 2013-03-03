@@ -25,8 +25,7 @@ time, mark, audio, video {
     border: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline;
-}
+    vertical-align: baseline; }
 
 sup {
     font-size: smaller;
@@ -56,11 +55,16 @@ table {
 
 // #Basic Styles
 // ==================================================
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
 * {
     // #transition > .all(0.2s, ease); // Apply a nice transition to all elements
     .box-sizing(); // Uses box-sizing: border-box; on every element
     background-repeat: no-repeat; // Set all images to no-repeat so you don't have to individually
-    vertical-align: middle; // inline/inline-block elements don't play nicely on the same line, this fixes that http://css-tricks.com/things-it-might-be-funuseful-to-try-the-universal-selector-on/
+    vertical-align: middle; // some browsers, inline/inline-block elements don't play nicely on the same line
+                            // http://css-tricks.com/things-it-might-be-funuseful-to-try-the-universal-selector-on/
 }
 
 body {
@@ -191,6 +195,9 @@ ul {
 ol {
     list-style: decimal; }
 
+li {
+    margin-bottom: 0.75rem; }
+
 ol, ul.square,
 ul.circle, ul.disc {
     margin-left: 1.875rem; }
@@ -203,9 +210,6 @@ ol ol, ol ul {
 ul ul li, ul ol li,
 ol ol li, ol ul li {
     margin-bottom: 0.375rem; }
-
-li {
-    margin-bottom: 0.75rem; }
 
 // #Images
 // ==================================================
@@ -279,7 +283,7 @@ select {
     font: 0.8125rem @bodyFontFamily;
     color: #777;
     margin: 0;
-    width: 210px;
+    width: 13.125em;
     max-width: 100%;
     display: block;
     margin-bottom: 1.25rem;
@@ -287,7 +291,7 @@ select {
 
 select {
     padding: 0;
-    width: 220px; }
+    width: 13.750em; }
 
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -298,7 +302,7 @@ textarea:focus {
     #shadow > .box(0 0 0.1875rem rgba(0,0,0,.2)); }
 
 textarea {
-    min-height: 60px; }
+    min-height: 3.750em; }
 
 label,
 legend {
@@ -325,3 +329,19 @@ input[type="checkbox"] {
 .add-bottom {
     margin-bottom: 1.25rem !important; }
 
+.visible-phone   { display: none !important; }
+.visible-tablet  { display: none !important; }
+.hidden-phone    { }
+.hidden-tablet   { }
+.hidden-desktop  { display: none !important; }
+.visible-desktop { display: inherit !important; }
+
+.pull-right      { float: right; }
+.pull-left       { float: left; }
+.hide            { display: none !important; }
+.show            { display: block; }
+.invisible       { visibility: hidden; }
+.no-underline    { text-decoration: none; }
+.text-left       { text-align: left; }
+.text-center     { text-align: center; }
+.text-right      { text-align: right; }
