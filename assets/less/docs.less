@@ -39,9 +39,6 @@ header {
 .doc-section {
     margin: 30px 0; }
 
-#whatAndWhy .row {
-    padding: 30px 0 0; }
-
 #typography blockquote {
     margin-top: 20px; }
 
@@ -54,35 +51,40 @@ header {
 }
 
 // Grid
-#grid .column,
-#grid .columns {
-    background: #ddd;
-    height: 25px;
-    line-height: 25px;
-    margin-bottom: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #555;
-    font-size: 12px;
-    font-weight: bold;
-    #border > .rounded(2px);
+#grid {
+    .column,
+    .columns {
+        background: #ddd;
+        height: 25px;
+        line-height: 25px;
+        margin-bottom: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #555;
+        font-size: 12px;
+        font-weight: bold;
+        #border > .rounded(2px);
+        &:hover,
+        &:hover {
+            background: #bbb;
+            color: #333; }
+    }
+    .example-grid {
+        overflow: hidden; }
 }
-#grid .column:hover,
-#grid .columns:hover {
-    background: #bbb;
-    color: #333; }
-#grid .example-grid { overflow: hidden; }
 
 .post-button-note,
 .post-button-note a {
     font-size: 11px;
     color: #999; }
 
-#examples .four.columns a {
-    text-decoration: none;
-}
-#examples .four.columns a:hover {
-    text-decoration: underline;
+#examples {
+    .four.columns a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .resize {
@@ -93,7 +95,13 @@ header {
     width: 80px;
     background: url('../img/resize.png'); }
 
-ul ul ul li { margin-bottom: 3px; }
+ul {
+    ul {
+        ul {
+            li { margin-bottom: 3px; }
+        }
+    }
+}
 
 
 @media screen and (max-width: 75rem) {
