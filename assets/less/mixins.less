@@ -1,0 +1,63 @@
+.size(@size) {
+    width: @size;
+    height: @size; }
+
+.size(@width, @height) {
+    width: @width;
+    height: @height; }
+
+.image-2x(@image, @width, @height) {
+    @media print,
+        screen,
+        (-webkit-min-device-pixel-ratio: 1.25),
+        (~`"-o-min-device-pixel-ratio: 1.25/1"`),
+        (min--moz-device-pixel-ratio: 1.25),
+        (min-device-pixel-ratio: 1.25),
+        (min-resolution: 120dpi),
+        (min-resolution: 1.25dppx) {
+            // on retina, use image that's scaled by 2
+            background-image: url('@{image}');
+            background-size: @width @height; }
+}
+
+.rem(@property, @value) {
+    // This is a workaround, inspired by https://github.com/borodean/less-properties
+    @rem: (@value / 16);
+    -: ~`(function () { return ';@{property}: @{value}px'; }())` ;
+    -: ~`(function () { return ';@{property}: @{rem}rem'; }())`;
+}
+
+.box-sizing(@type: border-box) {
+    -moz-box-sizing: @type;
+    -webkit-box-sizing: @type;
+    -ms-box-sizing: @type;
+    box-sizing: @type; }
+
+.font-size(@font-size: 16) {
+    @rem: (@font-size / 16);
+    font-size: @font-size * 1px;
+    font-size: ~"@{rem}rem"; }
+
+.blur(@blur:2px) {
+    -webkit-filter: blur(@blur);
+    -moz-filter: blur(@blur);
+    -ms-filter: blur(@blur);
+    -o-filter: blur(@blur);
+    filter: blur(@blur); }
+
+.circular(@height: 150px, @width: 150px, @radius: 150px) {
+    width: @width;
+    height: @height;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box; }
+
+.transform(@args) {
+    -webkit-transform: @args;
+       -moz-transform: @args;
+        -ms-transform: @args;
+         -o-transform: @args;
+            transform: @args; }
