@@ -45,7 +45,7 @@
             <hr class="large" />
             <div class="doc-section" id="whatAndWhy">
                 <h3>What Is It? <span class="subheader">A Beautiful Boilerplate for Responsive, Mobile-Friendly Development</span></h3>
-                <p>Skeleton-em is a small collection of LESS/CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17" laptop
+                <p>Skeleton-em is a small collection of CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17" laptop
                     screen or an iPhone. Skeleton-em is built on three core principles:</p>
                 <div class="row clearfix">
                     <div class="four columns alpha">
@@ -64,7 +64,7 @@
                     <div class="twelve columns omega">
                         <h5>Fast to Start</h5>
                         <p>Skeleton-em is a tool for rapid development. Get started fast with CSS best practices, a well-structured grid that makes mobile
-                            consideration easy, an organized file structure and super basic UI elements like lightly styled forms, buttons and more.</p>
+                            consideration easy, an organized file structure and super basic UI elements like lightly styled forms, buttons, tabs and more.</p>
                     </div>
                 </div>
                 <div class="row clearfix">
@@ -81,8 +81,8 @@
             <hr />
             <div class="doc-section clearfix" id="grid">
                 <h3>The Grid</h3>
-                <p>The original Skeleton base grid is a variation of the 960 grid system. Skeleton-em uses LESS for CSS preprocessing which allows you to specify the
-                    width grid adapts. the base grid size is 60rem.
+                <p>The original Skeleton base grid is a variation of the 960 grid system. This version uses LESS CSS which allows you to specify the width you want and the
+                    grid adapts, however, the base grid size is 60rem.
                  The syntax is simple and it's effective cross browser, but the awesome part is that it also has the flexibility to go mobile like a champ.<br />
                  <strong>Go ahead, resize the browser and watch as the layout reacts!</strong></p>
                 <div class="example-grid">
@@ -153,8 +153,8 @@
                     </div>
                     <div class="seven columns omega">
                         <blockquote>
-                            <p>Skeleton-em is amazing!</p>
-                            <cite>Brandon Brown, Skeleton-em Creator</cite>
+                            <p>Skeleton-Em is amazing!</p>
+                            <cite>Brandon Brown, Skeleton-Em Creator</cite>
                         </blockquote>
                         <blockquote>
                             <p>This is a blockquote style example. It stands out, but is awesome</p>
@@ -170,7 +170,7 @@
             <hr />
             <div class="doc-section" id="buttons">
                 <h3>Buttons</h3>
-                <p>Skeleton-em takes on a flat design appearance, and this is evident in the outstanding buttons.</p>
+                <p>Skeleton-Em takes on a flat design appearance, and this is evident in the outstanding buttons.</p>
                 <a href="#" class="button">Click Me For Action</a>
                 <div class="hidden-code">
                     <a href="#">Code Example</a>
@@ -302,7 +302,6 @@
                             <li>
                                 <strong>js</strong> <em>(folder)</em>
                                 <ul class="circle">
-                                    <li><strong>jquery-1.9.1.min.js</strong>: Latest stable version of the jQuery library</li>
                                     <li><strong>media-query-debug.js</strong>: Media query debugger</li>
                                 </ul>
                             </li>
@@ -348,57 +347,67 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/jquery-1.9.1.min.js"><\/script>')</script>
     <script src="assets/js/media-query-debug.js"></script>
-
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38980599-1']);
+    _gaq.push(['_setDomainName', 'github.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
     <script>
-        // Async load gists
-        (function(){
-            var gists = document.getElementsByTagName('gist');
-            function embed(username, id, file, i, tag) {
-                window['embed_gist_'+i] = function(gist) {
-                    var tmp = document.createElement('div');
-                    tmp.innerHTML = gist.div;
-                    tag.parentNode.replaceChild(tmp.firstChild, tag);
-                };
-                var url = 'https://gist.github.com/'+username+'/'+id+'.json?callback=embed_gist_'+i;
-                if(file) {
-                    url += '&file='+file;
-                }
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = url;
-                document.head.appendChild(script);
+    // Async load gists
+    (function(){
+        var gists = document.getElementsByTagName('gist');
+        function embed(username, id, file, i, tag) {
+            window['embed_gist_'+i] = function(gist) {
+                var tmp = document.createElement('div');
+                tmp.innerHTML = gist.div;
+                tag.parentNode.replaceChild(tmp.firstChild, tag);
+            };
+            var url = 'https://gist.github.com/'+username+'/'+id+'.json?callback=embed_gist_'+i;
+            if(file) {
+                url += '&file='+file;
             }
-            if(gists.length) {
-                var css = document.createElement('link');
-                css.rel = 'stylesheet';
-                css.href= 'https://gist.github.com/assets/embed-0af287a4b5c981db301049e56f06e5d3.css';
-                document.head.appendChild(css);
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
+            document.head.appendChild(script);
+        }
+        if(gists.length) {
+            var css = document.createElement('link');
+            css.rel = 'stylesheet';
+            css.href= 'https://gist.github.com/assets/embed-0af287a4b5c981db301049e56f06e5d3.css';
+            document.head.appendChild(css);
+        }
+        for(var i=0; i<gists.length; i++) {
+            var username = gists[i].getAttribute('data-username');
+            var id = gists[i].getAttribute('data-id');
+            var file = gists[i].getAttribute('data-file');
+            if(id) {
+                embed(username, id, file, i, gists[i]);
             }
-            for(var i=0; i<gists.length; i++) {
-                var username = gists[i].getAttribute('data-username');
-                var id = gists[i].getAttribute('data-id');
-                var file = gists[i].getAttribute('data-file');
-                if(id) {
-                    embed(username, id, file, i, gists[i]);
-                }
-            }
-        })();
+        }
+    })();
 
-        $(document).on('click', '.hidden-code, a, button, input[type=submit]', function(e) {
-            e.preventDefault();
-            $(this).children('.gist').slideToggle();
-        })
+    $(document).on('click', '.hidden-code, a, button, input[type=submit]', function(e) {
+        e.preventDefault();
+        $(this).children('.gist').slideToggle();
+    })
 
-        var originalText;
-        $('.example-grid').children().hover(
-            function() {
-                originalText = $(this).text();
-                $(this).html($(this).width()+'px');
-            },
-            function() {
-                $(this).html(originalText);
-            }
-        )
+    var originalText;
+    $('.example-grid').children().hover(
+        function() {
+            originalText = $(this).text();
+            $(this).html($(this).width()+'px');
+        },
+        function() {
+            $(this).html(originalText);
+        }
+    )
     </script>
 
 </body>
