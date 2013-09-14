@@ -2,14 +2,26 @@
 // This requires Jquery loaded before this script. Toggle the visiblity of the info using the "t" key.
 // Inspired by Johan Brook's css
 // Enjoy!
+//
+// Modified by Brandon Brown - @brandonb927
 
-$('body').prepend("<div id='viewportInfo' style='position:fixed;width:100%;padding:4px 1em;background:#00ff00;z-index:1;'><div id='sizeInfo'></div></div>");
-$('#sizeInfo').text('Viewport (Width: ' + $(window).width() + ' , Height: ' + $(window).height() + ' )');
-    $(window).resize(function () {
-        $('#sizeInfo').text('Viewport (Width: ' + $(window).width() + ' , Height: ' + $(window).height() + ' )');
-    });
-$(document).keydown(function (e) {
+$('body').prepend('<div id="mediaQueryDebug"><a href="#" title="Media Query Debug"><i class="icon-wrench"></i> <span>Toggle Debug</span></a></div><div id="viewportInfo"><div id="sizeInfo"></div></div>')
+
+$('#sizeInfo').text('Viewport (Width: ' + $(window).width() + ' , Height: ' + $(window).height() + ' )')
+
+$(window).resize(function () {
+    $('#sizeInfo').text('Viewport (Width: ' + $(window).width() + ' , Height: ' + $(window).height() + ' )')
+})
+
+$(document).on('click', '#mediaQueryDebug a', function(e) {
+    var $this = $(this)
+    e.preventDefault()
+    // Debug enabled on click
+    $("#viewportInfo").fadeToggle()
+})
+.keydown(function (e) {
+    // Debug enabled on keypress
     if(e.keyCode == 84 ) {
-        $("#viewportInfo").toggle();
+        $("#viewportInfo").fadeToggle()
     }
-});
+})

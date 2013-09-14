@@ -1,0 +1,35 @@
+// #Utilities
+// ==================================================
+
+.visible-phone   { display: none !important; }
+.visible-tablet  { display: none !important; }
+.hidden-phone    { }
+.hidden-tablet   { }
+.hidden-desktop  { display: none !important; }
+.visible-desktop { display: inherit !important; }
+
+.pull-right      { float: right; }
+.pull-left       { float: left; }
+
+.hidden          { display: none !important; }
+.hide            { display: none; }
+.show            { display: block; }
+.invisible       { visibility: hidden; }
+
+.no-underline    { text-decoration: none; }
+
+.text-left       { text-align: left; }
+.text-center     { text-align: center; }
+.text-right      { text-align: right; }
+
+// Prevent flicker on iOS devices
+// http://stackoverflow.com/questions/3461441/prevent-flicker-on-webkit-transition-of-webkit-transform
+.no-flick        { -webkit-transform:translate3d(0,0,0); }
+
+.transition {
+    -webkit-transition: all 0.1s ease;
+       -moz-transition: all 0.1s ease;
+        -ms-transition: all 0.1s ease;
+         -o-transition: all 0.1s ease;
+            transition: all 0.1s ease;
+}

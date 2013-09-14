@@ -1,23 +1,18 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Skeleton-em: Beautiful Boilerplate for Responsive, Mobile-Friendly Development</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Skeleton: Beautiful Boilerplate for Responsive, Mobile-Friendly Development">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="">
+    <meta name="description" content="Skeleton: Beautiful Boilerplate for Responsive, Mobile-Friendly Development">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png">
-    <link rel="stylesheet" href="assets/css/skeleton.css">
     <link rel="stylesheet" href="assets/css/docs.css">
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <!-- Only for one icon... wastefully pulling ALL icons -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="sidebar">
@@ -44,7 +39,7 @@
             </header>
             <hr class="large" />
             <div class="doc-section" id="whatAndWhy">
-                <h3>What Is It? <span class="subheader">A Beautiful Boilerplate for Responsive, Mobile-Friendly Development</span></h3>
+                <h3>What Is It? <small>A Beautiful Boilerplate for Responsive, Mobile-Friendly Development</small></h3>
                 <p>Skeleton-em is a small collection of CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17" laptop
                     screen or an iPhone. Skeleton-em is built on three core principles:</p>
                 <div class="row clearfix">
@@ -64,7 +59,7 @@
                     <div class="twelve columns omega">
                         <h5>Fast to Start</h5>
                         <p>Skeleton-em is a tool for rapid development. Get started fast with CSS best practices, a well-structured grid that makes mobile
-                            consideration easy, an organized file structure and super basic UI elements like lightly styled forms, buttons, tabs and more.</p>
+                            consideration easy, an organized file structure and super basic UI elements like lightly styled forms, buttons, and more.</p>
                     </div>
                 </div>
                 <div class="row clearfix">
@@ -86,54 +81,98 @@
                  The syntax is simple and it's effective cross browser, but the awesome part is that it also has the flexibility to go mobile like a champ.<br />
                  <strong>Go ahead, resize the browser and watch as the layout reacts!</strong></p>
                 <div class="example-grid">
-                    <div class="one column alpha">One</div>
-                    <div class="fifteen columns omega">Fifteen</div>
+                    <h3>Grid</h3>
 
-                    <div class="two columns alpha">Two</div>
-                    <div class="fourteen columns omega">Forteen</div>
+                    <div class="column one alpha">One</div>
+                    <div class="columns fifteen omega">Fifteen</div>
 
-                    <div class="three columns alpha">Three</div>
-                    <div class="thirteen columns omega">Thirteen</div>
+                    <div class="columns two alpha">Two</div>
+                    <div class="columns fourteen omega">Fourteen</div>
 
-                    <div class="four columns alpha">Four</div>
-                    <div class="twelve columns omega">Twelve</div>
+                    <div class="columns three alpha">Three</div>
+                    <div class="columns thirteen omega">Thirteen</div>
 
-                    <div class="five columns alpha">Five</div>
-                    <div class="eleven columns omega">Eleven</div>
+                    <div class="columns four alpha">Four</div>
+                    <div class="columns twelve omega">Twelve</div>
 
-                    <div class="six columns alpha">Six</div>
-                    <div class="ten columns omega">Ten</div>
+                    <div class="columns five alpha">Five</div>
+                    <div class="columns eleven omega">Eleven</div>
 
-                    <div class="seven columns alpha">Seven</div>
-                    <div class="nine columns omega">Nine</div>
+                    <div class="columns six alpha">Six</div>
+                    <div class="columns ten omega">Ten</div>
 
-                    <div class="eight columns alpha">Eight</div>
-                    <div class="eight columns omega">Eight</div>
+                    <div class="columns seven alpha">Seven</div>
+                    <div class="columns nine omega">Nine</div>
 
-                    <div class="nine columns alpha">Nine</div>
-                    <div class="seven columns omega">Seven</div>
+                    <div class="columns eight alpha">Eight</div>
+                    <div class="columns eight omega">Eight</div>
 
-                    <div class="ten columns alpha">Ten</div>
-                    <div class="six columns omega">Six</div>
+                    <div class="columns nine alpha">Nine</div>
+                    <div class="columns seven omega">Seven</div>
 
-                    <div class="eleven columns alpha">Eleven</div>
-                    <div class="five columns omega">Five</div>
+                    <div class="columns ten alpha">Ten</div>
+                    <div class="columns six omega">Six</div>
 
-                    <div class="twelve columns alpha">Twelve</div>
-                    <div class="four  columns omega">Four</div>
+                    <div class="columns eleven alpha">Eleven</div>
+                    <div class="columns five omega">Five</div>
 
-                    <div class="thirteen columns alpha">Thirteen</div>
-                    <div class="three columns omega">Three</div>
+                    <div class="columns twelve alpha">Twelve</div>
+                    <div class="columns four omega">Four</div>
 
-                    <div class="fourteen columns alpha">Forteen</div>
-                    <div class="two columns omega">Two</div>
+                    <div class="columns thirteen alpha">Thirteen</div>
+                    <div class="columns three omega">Three</div>
 
-                    <div class="fifteen columns alpha">Fifteen</div>
-                    <div class="one column omega">One</div>
+                    <div class="columns fourteen alpha">Fourteen</div>
+                    <div class="columns two omega">Two</div>
+
+                    <div class="columns fifteen alpha">Fifteen</div>
+                    <div class="column one omega">One</div>
+
+                    <hr />
+
+                    <h3>Thirds</h3>
+
+                    <div class="column one-third alpha">One Third</div>
+                    <div class="column two-thirds omega">Two Thirds</div>
+
+                    <div class="column two-thirds alpha">Two Thirds</div>
+                    <div class="column one-third omega">One third</div>
+
+                    <hr />
+
+                    <h3>Offsets</h3>
+
+                    <div class="offset-by-seven row">
+                        <div class="column one alpha">One Offset-Seven</div>
+                        <div class="column one omega">One</div>
+                    </div>
+                    <div class="offset-by-six row">
+                        <div class="columns two alpha">Two Offset-Six</div>
+                        <div class="columns two omega">Two</div>
+                    </div>
+                    <div class="offset-by-five row">
+                        <div class="columns three alpha">Three Offset-Five</div>
+                        <div class="columns three omega">Three</div>
+                    </div>
+                    <div class="offset-by-four row">
+                        <div class="columns four alpha">Four Offset-Four</div>
+                        <div class="columns four omega">Four</div>
+                    </div>
+                    <div class="offset-by-three row">
+                        <div class="columns five alpha">Five Offset-Three</div>
+                        <div class="columns five omega">Five</div>
+                    </div>
+                    <div class="offset-by-two row">
+                        <div class="columns six alpha">Six Offset-Two</div>
+                        <div class="columns six omega">Six</div>
+                    </div>
+                    <div class="offset-by-one row">
+                        <div class="columns seven alpha">Seven Offset-One</div>
+                        <div class="columns seven omega">Seven</div>
+                    </div>
                 </div>
                 <div class="hidden-code">
-                    <a href="#">Code Example</a>
-                    <gist data-username="dhgamache" data-id="959632" data-file="Skeleton Grid"></gist>
+                    <strong>Check the source of this page for an example of the HTML structure</strong>
                 </div>
             </div>
             <hr />
@@ -153,18 +192,18 @@
                     </div>
                     <div class="seven columns omega">
                         <blockquote>
-                            <p>Skeleton-Em is amazing!</p>
-                            <cite>Brandon Brown, Skeleton-Em Creator</cite>
-                        </blockquote>
-                        <blockquote>
                             <p>This is a blockquote style example. It stands out, but is awesome</p>
                             <cite>Dave Gamache, Skeleton Creator</cite>
+                        </blockquote>
+                        <blockquote class="right">
+                            <p>Skeleton-Em is amazing! This is a right-aligned blockquote.</p>
+                            <cite>Brandon Brown, Skeleton-Em Creator</cite>
                         </blockquote>
                     </div>
                 </div>
                 <div class="hidden-code">
-                    <a href="#">Code Example</a>
-                    <gist data-username="dhgamache" data-id="973460" data-file="typography"></gist>
+                    <a href="#" class="code-example">Code Example</a>
+                    <gist data-username="dhg" data-id="973460" data-file="typography"></gist>
                 </div>
             </div>
             <hr />
@@ -173,8 +212,8 @@
                 <p>Skeleton-Em takes on a flat design appearance, and this is evident in the outstanding buttons.</p>
                 <a href="#" class="button">Click Me For Action</a>
                 <div class="hidden-code">
-                    <a href="#">Code Example</a>
-                    <gist data-username="dhgamache" data-id="973448" data-file="buttons"></gist>
+                    <a href="#" class="code-example">Code Example</a>
+                    <gist data-username="dhg" data-id="973448" data-file="buttons"></gist>
                 </div>
             </div>
             <hr />
@@ -217,12 +256,13 @@
                             </label>
                         </fieldset>
                         <button type="submit">Submit Form</button>
+                        <button type="submit" class="full-width">Full-width</button>
                     </form>
                 </div>
                 <br class="clear" />
                 <div class="hidden-code">
-                    <a href="#">Code Example</a>
-                    <gist data-username="dhgamache" data-id="973455" data-file="forms"></gist>
+                    <a href="#" class="code-example">Code Example</a>
+                    <gist data-username="dhg" data-id="973455" data-file="forms"></gist>
                 </div>
             </div>
             <hr />
@@ -241,8 +281,8 @@
                     <li><strong>Just Mobile Portrait</strong>: Less than 479px</li>
                 </ul>
                 <div class="hidden-code">
-                    <a href="#">Code Example</a>
-                    <gist data-username="dhgamache" data-id="973467" data-file="media queries"></gist>
+                    <a href="#" class="code-example">Code Example</a>
+                    <gist data-username="dhg" data-id="973467" data-file="media queries"></gist>
                 </div>
             </div>
             <hr />
@@ -252,19 +292,18 @@
                 <ul class="square add-bottom">
                     <li>Latest Chrome (Mac/PC)</li>
                     <li>Latest Safari</li>
-                    <li>Firefox 3.0+ (Mac/PC)</li>
-                    <li>Internet Explorer 9, 8, 7</li>
+                    <li>Latest Firefox (Mac/PC)</li>
+                    <li>Internet Explorer 10, 9</li>
                     <li>All iPhone models</li>
-                    <li>Galaxy Nexus, Nexus 4, Optimus G, Droid (Charge/Original)</li>
-                    <li>iPad, Nexus 7</li>
+                    <li>Galaxy Nexus, Nexus 4, Optimus G</li>
+                    <li>iPad, iPad Mini, Nexus 7</li>
                 </ul>
                 <p>There is a small hiccup though - older non-CSS3 browsers aren't going to respond to the media-queries or the rem units and thus will be served the
                     standard 960 grid with a px-unit fallback even if they are resized. In the spirit of graceful degradation though, I'm going to let this be instead
                     of trying to implement a JS solution. If you are interested in one though, try the <a href="https://github.com/scottjehl/Respond">respond.js polyfill</a>.</p>
-                <p><strong>Notes on IE</strong>: We all know sometimes IE doesn't behave, so through the genius of conditional CSS I've added a class of "ie" to all
-                    versions of the browser, as well as specific targets for each (i.e. "ie6", "ie7", "ie8"). It's not a perfect world, but hopefully this will help
-                    make naughty IE behave. I plan for Skeleton-em to lose support for IE8 and below sometime in 2013, following the final release of
-                    <a href="http://blog.jquery.com/2012/06/28/jquery-core-version-1-9-and-beyond/">jQuery 2.0</a>.</p>
+                <p><strong>Notes on IE</strong>: Since the release of jQuery 2.0, I have decided that the natural evolution of Skeleton-em must follow suit. From today forward,
+                    IE version 6-8 will no longer be support through the HTML5-shiv, nor any specific CSS hacks to make it work in these silly browsers. IF you need IE 6-8 support,
+                    consult the original version of <a href="https://github.com/dhgamache/Skeleton/tarball/master">Skeleton</a>.</p>
             </div>
             <hr />
             <div class="doc-section" id="download">
@@ -333,6 +372,9 @@
                 <p><strong>Skeleton-em changelog</strong></p>
                 <ul class="square">
                     <li>
+                        <strong>V0.3</strong> <em>(14/09/2013)</em>: Updated the half-baked implementation of rem-base values, updated alot!
+                    </li>
+                    <li>
                         <strong>V0.2</strong> <em>(3/1/2013)</em>: Skeleton-em released with some updates to the original Skeleton code, and rem-based media-queries
                         and font typography :)
                     </li>
@@ -344,11 +386,23 @@
 
     <div class="resize"></div>
 
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script>window.jQuery || document.write('<script src="assets/js/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="assets/js/media-query-debug.js"></script>
 
     <script>
+        function hideAddressBar() {
+            setTimeout(function () {
+                if(!pageYOffset) {
+                    window.scrollTo(0, 1)
+                }
+            }, 1000)
+        }
+
+        if (/mobi/i.test(navigator.userAgent) && !location.hash) {
+            window.addEventListener("load", hideAddressBar())
+            window.addEventListener("orientationchange", hideAddressBar())
+        }
+
         // Async load gists
         (function(){
             var gists = document.getElementsByTagName('gist');
@@ -370,7 +424,8 @@
             if(gists.length) {
                 var css = document.createElement('link');
                 css.rel = 'stylesheet';
-                css.href= 'https://gist.github.com/assets/embed-0af287a4b5c981db301049e56f06e5d3.css';
+                // css.href= 'https://gist.github.com/assets/embed-0af287a4b5c981db301049e56f06e5d3.css'; // Old
+                css.href= 'https://gist.github.com/assets/embed-8f95cc15c5dcf1117ab18c08ff316641.css';
                 document.head.appendChild(css);
             }
             for(var i=0; i<gists.length; i++) {
@@ -383,13 +438,16 @@
             }
         })();
 
-        $(document).on('click', '.hidden-code, a, button, input[type=submit]', function(e) {
+        $(document).on('click', '.hidden-code, a.code-example, button, input[type=submit], input[type=button]', function(e) {
             e.preventDefault();
             $(this).children('.gist').slideToggle();
         })
+        .on('click', 'a, button, input[type=submit], input[type=button]', function(e) {
+            e.preventDefault();
+        })
 
         var originalText;
-        $('.example-grid').children().hover(
+        $('.example-grid .row').children().hover(
             function() {
                 originalText = $(this).text();
                 $(this).html($(this).width()+'px');
